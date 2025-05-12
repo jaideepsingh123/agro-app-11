@@ -16,7 +16,8 @@ spec:
         app: vote
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote:before-multi-arch
+      - image: dockersamples/examplevotingapp_vote:v1
+        imagePullPolicy: Always
         name: vote
         env:
         - name: OPTION_A
@@ -26,3 +27,10 @@ spec:
         ports:
         - containerPort: 80
           name: vote
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
