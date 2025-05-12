@@ -30,9 +30,9 @@ spec:
             git clone https://github.com/jaideepsingh123/agro-app-11.git /app
             cd /app/vote
             pip install -r requirements.txt
-            FLASK_APP=app.py FLASK_ENV=production python app.py --host=0.0.0.0 --port=5001
+            FLASK_APP=app.py FLASK_ENV=production python app.py --host=0.0.0.0 --port=5000
         ports:
-        - containerPort: 5001
+        - containerPort: 5000
           name: vote
         resources:
           requests:
