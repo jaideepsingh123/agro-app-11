@@ -23,6 +23,8 @@ spec:
           value: "FSD"
         - name: OPTION_B
           value: "AIML"
+        - name: PORT
+          value: "5001"
         command: ["/bin/sh", "-c"]
         args:
           - |
@@ -30,9 +32,9 @@ spec:
             git clone https://github.com/jaideepsingh123/agro-app-11.git /app
             cd /app/result
             npm install
-            npm start
+            PORT=5001 node server.js
         ports:
-        - containerPort: 80
+        - containerPort: 5001
           name: result
         resources:
           requests:
