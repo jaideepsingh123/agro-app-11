@@ -4,6 +4,7 @@ metadata:
   labels:
     app: db
   name: db
+  namespace: voting-app
 spec:
   replicas: 1
   selector:
@@ -25,6 +26,13 @@ spec:
         ports:
         - containerPort: 5432
           name: postgres
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
           name: db-data
