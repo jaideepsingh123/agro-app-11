@@ -13,6 +13,10 @@ WORKDIR /usr/local/app
 COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Set environment variables
+ENV OPTION_A="FSD" \
+    OPTION_B="AIML"
+
 # Define a stage specifically for development, where it'll watch for
 # filesystem changes
 FROM base AS dev
