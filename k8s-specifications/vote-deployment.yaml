@@ -16,7 +16,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote:latest
+      - image: dockersamples/examplevotingapp_vote:before-multi-arch
         name: vote
         env:
         - name: OPTION_A
