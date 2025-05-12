@@ -18,6 +18,11 @@ spec:
       containers:
       - image: dockersamples/examplevotingapp_result
         name: result
+        env:
+        - name: OPTION_A
+          value: "FSD"
+        - name: OPTION_B
+          value: "AIML"
         ports:
         - containerPort: 80
           name: result
