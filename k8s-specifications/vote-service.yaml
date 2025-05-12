@@ -6,11 +6,12 @@ metadata:
   name: vote
   namespace: voting-app
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: "vote-service"
     port: 5000
     targetPort: 5000
+    nodePort: 30000
   selector:
     app: vote
   
