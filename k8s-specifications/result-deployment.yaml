@@ -16,14 +16,21 @@ spec:
         app: result
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_result:v1
-        imagePullPolicy: Always
+      - image: node:18-slim
         name: result
         env:
         - name: OPTION_A
           value: "FSD"
         - name: OPTION_B
           value: "AIML"
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            apt-get update && apt-get install -y git curl
+            git clone https://github.com/jaideepsingh123/agro-app-11.git /app
+            cd /app/result
+            npm install
+            npm start
         ports:
         - containerPort: 80
           name: result

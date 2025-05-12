@@ -16,14 +16,21 @@ spec:
         app: vote
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote:v1
-        imagePullPolicy: Always
+      - image: python:3.9-slim
         name: vote
         env:
         - name: OPTION_A
           value: "FSD"
         - name: OPTION_B
           value: "AIML"
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            apt-get update && apt-get install -y git curl
+            git clone https://github.com/jaideepsingh123/agro-app-11.git /app
+            cd /app/vote
+            pip install -r requirements.txt
+            python app.py
         ports:
         - containerPort: 80
           name: vote
