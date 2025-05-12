@@ -32,7 +32,8 @@ spec:
             git clone https://github.com/jaideepsingh123/agro-app-11.git /app
             cd /app/result
             npm install
-            PORT=5001 node server.js
+            npm install -g nodemon
+            nodemon server.js
         ports:
         - containerPort: 5001
           name: result
@@ -40,14 +41,16 @@ spec:
           httpGet:
             path: /
             port: 5001
-          initialDelaySeconds: 15
-          periodSeconds: 5
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
         livenessProbe:
           httpGet:
             path: /
             port: 5001
-          initialDelaySeconds: 15
-          periodSeconds: 5
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
         resources:
           requests:
             cpu: 100m
