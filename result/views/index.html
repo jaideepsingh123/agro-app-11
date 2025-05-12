@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="fsdvsaiml">
+<html ng-app="catsvsdogs">
   <head>
     <meta charset="utf-8">
     <title>FSD vs AIML -- Result</title>
@@ -11,18 +11,20 @@
   </head>
   <body ng-controller="statsCtrl">
     <div id="background-stats">
-      <div id="background-stats-1" class="fsd-bg"></div>
-      <div id="background-stats-2" class="aiml-bg"></div>
+      <div id="background-stats-1">
+      </div><!--
+      --><div id="background-stats-2">
+      </div>
     </div>
     <div id="content-container">
       <div id="content-container-center">
         <div id="choice">
-          <div class="choice fsd">
+          <div class="choice cats">
             <div class="label">FSD</div>
             <div class="stat">{{aPercent | number:1}}%</div>
           </div>
           <div class="divider"></div>
-          <div class="choice aiml">
+          <div class="choice dogs">
             <div class="label">AIML</div>
             <div class="stat">{{bPercent | number:1}}%</div>
           </div>

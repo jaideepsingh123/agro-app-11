@@ -86,12 +86,12 @@ body {
   text-transform: uppercase;
 }
 
-#choice .choice.aiml {
+#choice .choice.dogs {
   color: #00ff9d;
   float: right;
 }
 
-#choice .choice.fsd {
+#choice .choice.cats {
   color: #1aaef4;
   float: left;
 }

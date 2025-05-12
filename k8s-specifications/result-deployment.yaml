@@ -16,7 +16,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_result
+      - image: dockersamples/examplevotingapp_result:latest
         name: result
         env:
         - name: OPTION_A
