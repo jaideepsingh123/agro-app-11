@@ -9,9 +9,8 @@ spec:
   type: NodePort
   ports:
   - name: "vote-service"
-    port: 5000
-    targetPort: 80
-    nodePort: 31002
+    port: 5001
+    targetPort: 5001
   selector:
     app: vote
   
