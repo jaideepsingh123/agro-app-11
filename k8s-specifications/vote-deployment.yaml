@@ -16,8 +16,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: voting-app-vote:latest
-        imagePullPolicy: Never
+      - image: dockersamples/examplevotingapp_vote:latest
         name: vote
         env:
         - name: OPTION_A
